@@ -12,6 +12,7 @@ from . import (
 
 
 from .helpers import API_VERSION as __version__
+__author__ = "Goodies <goodies@protonmail.com>"
 
 
 __all__ = [
