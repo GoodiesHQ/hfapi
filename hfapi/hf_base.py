@@ -4,7 +4,6 @@ Base classes for HF App and Client implementations
 
 
 from abc import ABC, abstractproperty, abstractmethod
-from hfapi.auth import HFAuth
 from hfapi.asks import HFAsk
 from hfapi.helpers import API_VERSION
 

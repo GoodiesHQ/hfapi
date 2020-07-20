@@ -2,7 +2,6 @@
 HackForums API by Goodies
 """
 
-from .auth import HFAuth
 from .hf_base import HFAppBase, HFClientBase
 # from .hf_sync import HFApp, HFClient
 from .hf_async import HFAppAsync, HFClientAsync
@@ -16,8 +15,8 @@ __author__ = "Goodies <goodies@protonmail.com>"
 
 
 __all__ = [
-    "HFAuth",
     "HFClientBase", "HFAppBase",
+    "HFAppAsync", "HFClientAsync",
     "asks",
     "helpers",
     "__version__",
