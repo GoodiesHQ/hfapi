@@ -2,10 +2,11 @@
 Base classes for HF App and Client implementations
 """
 
-
 from abc import ABC, abstractproperty, abstractmethod
 from hfapi.asks import HFAsk
 from hfapi.helpers import API_VERSION
+from hfapi.scope import HFScope
+from typing import Union
 
 
 class HFUrlMixin:
@@ -33,11 +34,12 @@ class HFUrlMixin:
 
     @property
     def url_write(self):
-        return {self.url_base} + "/write"
+        return self.url_base + "/write"
 
 
 class HFClientBase(ABC, HFUrlMixin):
-    def __init__(self, access_token, **kwargs):
+    def __init__(self, access_token, scope: HFScope, **kwargs):
+        self._scope = HFScope.parse(scope) if isinstance(scope, str) else scope
         self._access_token = access_token
 
 
