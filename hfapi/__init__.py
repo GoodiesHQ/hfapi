@@ -2,24 +2,24 @@
 HackForums API by Goodies
 """
 
-from .hf_base import HFAppBase, HFClientBase
 # from .hf_sync import HFApp, HFClient
+from .helpers import API_VERSION
 from .hf_async import HFAppAsync, HFClientAsync
+from .hf_base import HFAppBase, HFClientBase
+from .scope import HFScope
 from . import (
     asks, helpers, scope,
 )
 
-
-from .scope import HFPerms
-from .helpers import API_VERSION as __version__
+__version__ = API_VERSION
 __author__ = "Goodies <goodies@protonmail.com>"
-
 
 __all__ = [
     "HFClientBase", "HFAppBase",
     "HFAppAsync", "HFClientAsync",
-    "HFPerms",
+    "HFScope",
     "asks",
     "helpers",
-    "__version__",
+    "scope"
+    "__version__", "__author__",
 ]
